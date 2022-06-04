@@ -33,8 +33,8 @@
     display: flex;
     flex-direction: column;
 }
-.header-left-col h2{
-    color: purple;
+.header-left-col span{
+    color: hsl(257, 53%, 28%);
 }
 .search{
     padding: 4em;
@@ -42,15 +42,19 @@
     align-items: center;
     justify-content: center;
 }
+.search i {
+    position: absolute;
+    left: 330px;
+}
 .search-bar{
-    width: 30%;
+    width: 60%;
     height: 2em;
     margin-left: 10px;
-    padding: 1em;
+    padding: 20px 20px 20px 50px;
 }
 .fa-magnifying-glass{
     font-size: 1.5rem;
-    color: purple;
+    color: hsl(257, 53%, 28%);
 }
 
 .categories{
@@ -58,7 +62,7 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
     justify-content: space-between;
-    grid-gap: 3em;
+    grid-row-gap: 1em;
     padding: 1em;
 }
 .categories-item{
@@ -67,7 +71,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: purple;
+    color: hsl(257, 53%, 28%);
 }
 .categories-item:hover{
     transition: 0.2s;
@@ -78,29 +82,105 @@
     font-size: small;
 }
 .categories-item img{
-    height: 80px;
-    width: 80px;
+    height: 180px;
+    width: 180px;
     margin-bottom: 1em;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px black;
 }
+
+/* Navbar CSS Start */
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.425);
+}
+.nav-bar a i{
+    font-size: 2em;
+    color: hsl(257, 53%, 28%);
+}
+/* Navbar CSS End */
 
 @media only screen and (max-width: 600px){
     .categories {
         grid-template-columns: repeat(3, 1fr);
     }
+    .categories-item img{
+        height: 100px;
+        width: 100px;
+    }
     .search-bar{
         min-width: 100%;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.466);
+        margin: 0%;
+        width: 100%;
+        padding: 0%;
+        padding: 20px 20px 20px 50px;
     }
     .profile, .basket{
-        height: 10vw;
-        width: 10vw;
+        height: 12vw;
+        width: 12vw;
     }
     .header{
         align-items: flex-start;
     }
-    .header-left-col h2{
-        font-size: 1em;
+    .header-left-col{
+        line-height: normal;
     }
+    .header-left-col span{
+        font-size: 16px;
+        font-weight: bolder;
+    }
+    .nav-bar{
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        overflow: hidden;
+        background-color: white;
 
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .search{
+        margin: 10px 0px 10px 0px;
+        width: 100%;
+        padding: 0px 15px 0px 15px;
+
+    }
+    .search i{
+        left: 30px;
+    }
 }
+
+/* Smartphone Rotated CSS Start*/
+@media only screen and (max-width: 900px) and (orientation: landscape){
+    .search-bar{
+        min-width: 100%;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.466);
+        margin: 0%;
+        width: 100%;
+        padding: 0%;
+        padding: 20px 20px 20px 50px;
+    }
+    .search{
+        margin: 10px 0px 10px 0px;
+        width: 100%;
+        padding: 0px 15px 0px 15px;
+
+    }
+    .search i{
+        left: 30px;
+    }
+    .categories-item img{
+        height: 120px;
+        width: 120px;
+    }
+/* Smartphone Rotated CSS End*/
+
